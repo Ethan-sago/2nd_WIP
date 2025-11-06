@@ -29,18 +29,18 @@ namespace intake {
         if (ctrl.ButtonL2.pressing()) { //Full Reverse
             TopIntake.spin(directionType::rev, speedPct, percentUnits::pct);
             BottomIntake.spin(directionType::rev, speedPct, percentUnits::pct);
-            MainIntake.spin(directionType::rev, speedPct, percentUnits::pct);
+            MainIntake.spin(directionType::fwd, speedPct, percentUnits::pct);
         }
         else if (ctrl.ButtonR2.pressing()) //Full-Intake
         {
             TopIntake.spin(directionType::fwd, speedPct, percentUnits::pct);
             BottomIntake.spin(directionType::fwd, speedPct, percentUnits::pct);
-            MainIntake.spin(directionType::fwd, speedPct, percentUnits::pct);
+            MainIntake.spin(directionType::rev, speedPct, percentUnits::pct);
         }
         else if(ctrl.ButtonR1.pressing()){ //Half-Intake
             TopIntake.stop(brakeType::coast);
             BottomIntake.spin(directionType::fwd, speedPct, percentUnits::pct);
-            MainIntake.spin(directionType::fwd, speedPct, percentUnits::pct);
+            MainIntake.spin(directionType::rev, speedPct, percentUnits::pct);
         }
         else
         {
